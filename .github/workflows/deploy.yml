@@ -5,6 +5,10 @@ on:
     branches:
       - main # قم بتغييرها إلى master إذا كان هذا هو فرعك الرئيسي
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

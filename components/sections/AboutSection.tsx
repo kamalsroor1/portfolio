@@ -11,7 +11,7 @@ export const AboutSection = () => {
   const personalDetails = [
     { label: "Name", value: "Kamal Salah Sroor" },
     { label: "Nationality", value: "Egyptian" },
-    { label: "Email", value: "kamal.sroor.dev@gmail.com" },
+    { label: "Email", value: "kamal.s.sroor@gmail.com" },
     { label: "Experience", value: "6+ Years" },
     { label: "Freelance", value: "Available" },
     { label: "Language", value: "Arabic / English" },
@@ -41,10 +41,10 @@ export const AboutSection = () => {
                 Professional Bio
               </h3>
               <p>
-                Results-driven Senior Full-Stack & Backend Engineer with over 6 years of professional experience designing, building, and maintaining robust enterprise web applications and scalable SaaS architectures.
+                Senior Software Engineer with over 6 years of professional experience architecting high-performance backend systems, scaling databases, and designing real-time architectures.
               </p>
               <p>
-                Recognized for strong system architectural ownership, technical SEO literacy, and efficient deployment using Docker environments. Experienced in managing dynamic DB migrations and configuring microservices with high uptime.
+                Specialized in Python (FastAPI, Django) and PHP (Laravel, Livewire), with extensive experience in NestJS, Redis, WebSockets, and custom AI integrations. Passionate about open-source tooling, clean code practices (SOLID, TDD), and building multi-tenant SaaS environments that scale to millions of requests.
               </p>
             </motion.div>
 

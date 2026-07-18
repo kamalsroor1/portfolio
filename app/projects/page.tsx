@@ -20,10 +20,21 @@ const categories: { label: string; value: 'all' | Project['category'] }[] = [
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState<'all' | Project['category']>("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const PROJECTS_PER_PAGE = 6;
+
+  const handleCategoryChange = (cat: 'all' | Project['category']) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
 
   const filteredProjects = activeCategory === "all"
     ? projects
     : projects.filter(p => p.category === activeCategory);
+
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const paginatedProjects = filteredProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
 
   return (
     <>
@@ -51,7 +62,7 @@ export default function ProjectsPage() {
                 key={cat.value}
                 variant={activeCategory === cat.value ? "primary" : "glass"}
                 size="sm"
-                onClick={() => setActiveCategory(cat.value)}
+                onClick={() => handleCategoryChange(cat.value)}
                 className="rounded-full"
               >
                 {cat.label}
@@ -61,7 +72,7 @@ export default function ProjectsPage() {
 
           {/* Grid list */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {paginatedProjects.map((project) => (
               <Card key={project.id} className="h-full flex flex-col justify-between border-border-subtle/50 relative overflow-hidden group">
                 <div className="flex flex-col gap-4">
                   <div className="flex justify-between items-start">
@@ -102,6 +113,33 @@ export default function ProjectsPage() {
               </Card>
             ))}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4 mt-12">
+              <Button
+                variant="glass"
+                size="sm"
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="px-4 text-xs rounded-full"
+              >
+                Previous
+              </Button>
+              <span className="font-mono text-xs text-text-secondary">
+                Page {currentPage} of {totalPages}
+              </span>
+              <Button
+                variant="glass"
+                size="sm"
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="px-4 text-xs rounded-full"
+              >
+                Next
+              </Button>
+            </div>
+          )}
         </div>
       </main>
       <Footer />

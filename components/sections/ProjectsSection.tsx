@@ -32,10 +32,21 @@ const testimonials = [
 
 export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | Project['category']>("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const PROJECTS_PER_PAGE = 3;
+
+  const handleCategoryChange = (cat: 'all' | Project['category']) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
 
   const filteredProjects = activeCategory === "all"
     ? projects
     : projects.filter(p => p.category === activeCategory);
+
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const paginatedProjects = filteredProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
 
   return (
     <section id="projects" className="py-24 px-6 border-b border-border-subtle bg-bg-deep/30 relative">
@@ -54,7 +65,7 @@ export const ProjectsSection = () => {
               key={cat.value}
               variant={activeCategory === cat.value ? "primary" : "glass"}
               size="sm"
-              onClick={() => setActiveCategory(cat.value)}
+              onClick={() => handleCategoryChange(cat.value)}
               className="rounded-full"
             >
               {cat.label}
@@ -63,9 +74,9 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
+            {paginatedProjects.map((project, idx) => (
               <motion.div
                 key={project.id}
                 layout
@@ -125,6 +136,35 @@ export const ProjectsSection = () => {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-12 mb-24">
+            <Button
+              variant="glass"
+              size="sm"
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className="px-4 text-xs rounded-full"
+            >
+              Previous
+            </Button>
+            <span className="font-mono text-xs text-text-secondary">
+              Page {currentPage} of {totalPages}
+            </span>
+            <Button
+              variant="glass"
+              size="sm"
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className="px-4 text-xs rounded-full"
+            >
+              Next
+            </Button>
+          </div>
+        )}
+
+        {totalPages <= 1 && <div className="mb-24" />}
 
         {/* Testimonials & Certificates Showcase from ref.webp */}
         <div className="border-t border-border-subtle/50 pt-16">

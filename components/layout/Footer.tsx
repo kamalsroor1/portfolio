@@ -19,7 +19,7 @@ export const Footer = () => {
             ••• Thank you for watching •••
           </h2>
           <span className="font-mono text-xs text-accent-glow tracking-widest block mt-4">
-            UI/UX Designer & Fullstack Architecture — Kamal Salah Sroor
+            Senior Backend Engineer & Software Architect — Kamal Salah Sroor
           </span>
         </div>
 
@@ -31,9 +31,9 @@ export const Footer = () => {
               Contact us
             </h4>
             <div className="flex flex-col gap-3 items-center md:items-start text-sm text-text-secondary">
-              <a href="mailto:kamal.sroor.dev@gmail.com" className="flex items-center gap-2 hover:text-accent-glow transition-colors">
+              <a href="mailto:kamal.s.sroor@gmail.com" className="flex items-center gap-2 hover:text-accent-glow transition-colors">
                 <Mail size={16} />
-                <span>kamal.sroor.dev@gmail.com</span>
+                <span>kamal.s.sroor@gmail.com</span>
               </a>
               <div className="flex items-center gap-2">
                 <MapPin size={16} />
@@ -62,7 +62,7 @@ export const Footer = () => {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/kamalsroor1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-md glass-panel flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300"
@@ -70,7 +70,7 @@ export const Footer = () => {
                 <Github size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/kamal-sroor/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-md glass-panel flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300"
@@ -84,7 +84,6 @@ export const Footer = () => {
         {/* Copywrite */}
         <div className="w-full flex flex-col md:flex-row items-center justify-between text-xs text-text-secondary font-mono gap-4">
           <span>&copy; {currentYear} Kamal Salah Sroor. All rights reserved.</span>
-          <span>Project Published: July 2026</span>
         </div>
       </div>
     </footer>

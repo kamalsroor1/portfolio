@@ -16,50 +16,57 @@ interface Job {
 
 const workExperience: Job[] = [
   {
-    period: "June 2026 – Present",
-    company: "SDC App (Remote)",
-    role: "Senior Backend Developer",
-    description: "Driving backend architecture and continuous integration strategies for scalable multi-tenant applications. Spearheading core API development, performance scaling, and modern microservices integration using Python (FastAPI) and Node.js.",
-    stack: ["FastAPI", "Python", "Node.js", "Multi-tenancy", "CI/CD", "Docker"]
+    period: "Jun 2025 – Jun 2026",
+    company: "E2E County",
+    role: "Senior Backend Engineer",
+    description: "Architected migration of a legacy Zend Framework 1 monolith to Laravel (30+ modules, 650+ tables). Designed an AI-assisted test automation pipeline using Postman for 1,600+ API endpoints, cutting test-authoring time by 90% and reducing regression cycles by 40%.",
+    stack: ["Laravel", "PHP", "Zend Framework", "PostgreSQL", "AI Prompting", "Postman"]
   },
   {
-    period: "Present",
-    company: "Freelance (Upwork)",
-    role: "Senior Full-Stack / Backend Engineer",
-    description: "Providing architectural consulting and hands-on implementation for high-value enterprise SaaS and AI-driven platforms. Specialized in legacy codebase maintenance, technical SEO infrastructure optimization for high-traffic programmatic sites (12k+ pages), and secure deployment environments.",
-    stack: ["FastAPI", "Laravel", "PostgreSQL", "SEO Infrastructure", "Cloudflare Workers", "Docker"]
+    period: "Aug 2023 – Jun 2025",
+    company: "Ibtikarat (ابتكارات)",
+    role: "Senior Backend Engineer",
+    description: "Spearheaded backend architecture for Saudi government digital transformation projects, scaling to 10k+ daily active users at 99.99% uptime. Developed a Multi-tenant SaaS core with Laravel and Livewire, integrating 5+ government APIs.",
+    stack: ["Laravel", "Livewire", "PHP", "MySQL", "Redis", "Multi-tenancy", "Security"]
   },
   {
-    period: "May 2024 – June 2026",
-    company: "Travware (Cairo, Egypt)",
-    role: "Backend Software Engineer",
-    description: "Architected and engineered high-performance APIs and centralized multi-tenant database designs utilizing Laravel and MySQL. Handled complex data migration workflows, routine framework updates, and dependency maintenance for high-uptime production systems.",
-    stack: ["Laravel", "PHP", "MySQL", "Database Migration", "API Design", "Redis"]
+    period: "Jan 2023 – Aug 2023",
+    company: "Developer Network",
+    role: "Backend Team Lead",
+    description: "Led development of Jarvis, a unified communication platform integrating Meta APIs (Facebook/WhatsApp) for enterprise support. Implemented Redis caching, reducing response times by 20%, and mentored 3 engineers on SOLID and clean code.",
+    stack: ["Meta APIs", "WebSockets", "PHP", "Laravel", "Redis", "SOLID", "TDD"]
   },
   {
-    period: "Jan 2020 – Apr 2024",
-    company: "Ibtikarat LLC / Freelance Contracts",
-    role: "Full-Stack Developer",
-    description: "Developed custom business management software, scheduling automations, and custom dashboards using Laravel, Livewire, and Vue.js. Optimized database queries, reducing heavy page load times significantly through caching layers and strategic data indexing. Integrated complex financial and operational pipelines.",
-    stack: ["Laravel", "Livewire", "Vue.js", "Alpine.js", "Redis Caching", "API Integrations"]
+    period: "Oct 2021 – Dec 2022",
+    company: "Pyramids Freight",
+    role: "Backend Engineer",
+    description: "Engineered logistics calculation logic and real-time container tracking. Integrated Stripe Payment Gateway with 3D Secure, reducing payment failures by 15%, and optimized database query indexing.",
+    stack: ["PHP", "Laravel", "MySQL", "Stripe API", "SQL Optimization", "Database Indexing"]
+  },
+  {
+    period: "2019 – 2021",
+    company: "Freelance & Early Career",
+    role: "Mid-Level Backend Engineer",
+    description: "Developed rental car booking engines with dynamic pricing matrices, integrating Riyad Bank and Mastercard payment APIs. Scaled Laravel systems for 30% user growth and automated CI/CD deployment pipelines.",
+    stack: ["PHP", "Laravel", "MySQL", "Redis Caching", "CI/CD", "OpenAPI/Swagger"]
   }
 ];
 
 const journeyMilestones = [
   {
     year: "2026",
-    title: "FastAPI & AI Specialist",
-    description: "Deepened expertise in high-performance Python (FastAPI) backends, LangChain, and AI Agent orchestration systems."
+    title: "Python, FastAPI & AI Systems",
+    description: "Shifting primary focus to high-performance Python (FastAPI, Django), AI Agent orchestration, and LangChain."
   },
   {
-    year: "2024",
-    title: "Database Architect & Senior Developer",
-    description: "Managed complex multi-tenant database migrations (2TB+ PostgreSQL/MySQL) and zero-downtime cutovers."
+    year: "2023",
+    title: "Senior Backend Engineer & Team Lead",
+    description: "Led development of enterprise real-time chat engines (Jarvis Meta APIs) and high-concurrency government platforms."
   },
   {
-    year: "2020",
-    title: "Enterprise Laravel Implementer",
-    description: "Engineered full-stack business tools with Laravel, Vue.js, and Redis integrations for logistics and finance operations."
+    year: "2019",
+    title: "Freelance Full-Stack Developer",
+    description: "Began professional development journey, building custom PHP Laravel booking engines, SaaS solutions, and E-commerce platforms."
   }
 ];
 

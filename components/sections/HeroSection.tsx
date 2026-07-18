@@ -7,10 +7,10 @@ import { Github, Linkedin } from "@/components/ui/Icons";
 import { Button } from "@/components/ui/Button";
 
 const roles = [
-  "Senior Full-Stack Engineer",
+  "Python & AI Developer",
+  "AI Agent Specialist",
   "Backend & API Architect",
-  "FastAPI & Python Developer",
-  "AI Integration Specialist"
+  "FastAPI & Python Engineer"
 ];
 
 export const HeroSection = () => {
@@ -68,11 +68,11 @@ export const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
         
-        {/* Left Side: Vertical text "Full Stack DEVELOPER" from reference */}
+        {/* Left Side: Vertical text "Python & AI DEVELOPER" */}
         <div className="hidden md:flex md:col-span-1 flex-col items-center justify-center gap-6 h-full select-none md:order-1">
           <div className="w-[1px] h-16 bg-border-subtle/40" />
           <span className="font-display text-text-secondary/20 text-2xl font-bold uppercase tracking-[15px] rotate-270 origin-center whitespace-nowrap">
-            Full Stack DEVELOPER
+            Python & AI DEVELOPER
           </span>
           <div className="w-[1px] h-16 bg-border-subtle/40" />
         </div>
@@ -126,7 +126,11 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="flex flex-col gap-1 w-full"
           >
-            <span className="font-mono text-xs text-accent-glow tracking-widest block uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent-glow font-mono text-[9px] md:text-[10px] uppercase tracking-wider mb-3 w-fit select-none animate-pulse">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-ping" />
+              <span>Current Focus: Python, FastAPI & AI Agents</span>
+            </div>
+            <span className="font-mono text-xs text-text-secondary/60 tracking-widest block uppercase">
               .../Welcome to my portal ...
             </span>
             
@@ -185,7 +189,7 @@ export const HeroSection = () => {
           </span>
           <div className="flex md:flex-col items-center gap-3 bg-black/40 border border-border-subtle/20 rounded-full md:rounded-2xl p-2 md:py-4 md:px-2 shadow-lg shadow-black/60">
             <a
-              href="https://github.com"
+              href="https://github.com/kamalsroor1"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-xl bg-black/60 border border-border-subtle/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300 hover:scale-105"
@@ -193,7 +197,7 @@ export const HeroSection = () => {
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/kamal-sroor/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-xl bg-black/60 border border-border-subtle/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300 hover:scale-105"
@@ -201,7 +205,7 @@ export const HeroSection = () => {
               <Linkedin size={18} />
             </a>
             <a
-              href="mailto:kamal.sroor.dev@gmail.com"
+              href="mailto:kamal.s.sroor@gmail.com"
               className="w-10 h-10 rounded-xl bg-black/60 border border-border-subtle/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300 hover:scale-105"
             >
               <Mail size={18} />

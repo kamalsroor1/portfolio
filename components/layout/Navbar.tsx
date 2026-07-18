@@ -102,7 +102,7 @@ export const Navbar = () => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/#contact">
+          <Link href="/#contact" onClick={(e) => handleLinkClick(e, "/#contact")}>
             <Button
               variant="glass"
               size="sm"
@@ -148,7 +148,7 @@ export const Navbar = () => {
               <span>Download Resume</span>
             </Button>
           </a>
-          <Link href="/#contact" onClick={() => setIsOpen(false)} className="w-full">
+          <Link href="/#contact" onClick={(e) => handleLinkClick(e, "/#contact")} className="w-full">
             <Button variant="primary" className="w-full">
               Light Up the Talk
             </Button>
