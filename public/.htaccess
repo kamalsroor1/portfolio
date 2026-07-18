@@ -1,0 +1,56 @@
+# ----------------------------------------------------------------------
+# Kamal Sroor Portfolio — Apache Shared Hosting (.htaccess)
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Force HTTPS (تحويل جميع الطلبات إلى بروتوكول آمن)
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # 2. Handle trailing slashes in Next.js Static Export
+    # Next.js export with trailingSlash: true generates folders like /about/index.html
+    # This rule internally maps clean URLs like domain.com/about to domain.com/about/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteCond %{REQUEST_URI} !(.*)\.(.*)$
+    RewriteRule ^(.*)$ $1/ [L,R=301]
+
+    # 3. Clean URLs mapping (if trailingSlash is disabled, falls back to .html files)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # 4. Custom 404 Error Page redirection
+    ErrorDocument 404 /404/index.html
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Performance & Caching (تسريع تحميل الموقع على الاستضافة)
+# ----------------------------------------------------------------------
+
+# Gzip Compression (تفعيل ضغط الملفات لتقليل حجمها وسرعة تحميلها)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Browser Caching (الاحتفاظ بالملفات الثابتة في متصفح الزائر لسرعة التصفح)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    
+    # Images & Fonts
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    
+    # CSS & JS
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
