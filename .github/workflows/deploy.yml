@@ -34,8 +34,8 @@ jobs:
       - name: Deploy to Hostinger via FTP/SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: '145.79.20.98'
+          username: 'u910151740.kamal-sroor.online'
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/
           local-dir: ./out/
