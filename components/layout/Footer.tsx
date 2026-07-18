@@ -15,7 +15,7 @@ export const Footer = () => {
           <span className="font-mono text-xs text-text-secondary tracking-widest block mb-4">
             .../Thank you ...
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold font-display uppercase tracking-widest text-text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-display uppercase tracking-wider text-text-primary leading-tight max-w-4xl mx-auto px-4">
             ••• Let's build something remarkable •••
           </h2>
           <span className="font-mono text-xs text-accent-glow tracking-widest block mt-4">
