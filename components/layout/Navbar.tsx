@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -101,7 +101,25 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://wa.me/201012316954"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300 bg-white/[0.01]"
+            title="Chat on WhatsApp"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.73.001-2.597-1.002-5.037-2.824-6.86C16.69 2.19 14.254 1.187 11.66 1.187 6.223 1.187 1.8 5.558 1.797 10.92c-.001 1.638.455 3.242 1.32 4.673l-.99 3.612 3.93-.999zM17.07 14.73c-.273-.137-1.62-.8-1.87-.892-.252-.093-.437-.138-.62.138-.182.274-.707.892-.867 1.077-.16.183-.32.206-.593.069-.272-.138-1.15-.424-2.19-1.354-.809-.722-1.354-1.616-1.513-1.89-.16-.273-.016-.421.12-.558.123-.122.273-.32.41-.48.136-.16.182-.273.272-.455.09-.183.046-.343-.023-.48-.068-.138-.62-1.496-.85-2.043-.223-.538-.49-.464-.67-.464-.176 0-.377-.009-.578-.009s-.527.076-.803.376c-.276.3-.1.152-1.15 1.153-.276.3-.59.74-.79 1.12-.2.378-.024.71.113.935.138.225.263.398.414.56l5.72 5.093s.32.206.59.07c.27-.138 1.62-.8 1.87-.89z"/>
+            </svg>
+          </a>
+          <a
+            href="mailto:kamal.s.sroor@gmail.com"
+            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300 bg-white/[0.01] mr-1"
+            title="Send Email"
+          >
+            <Mail size={16} />
+          </a>
           <Link href="/#contact" onClick={(e) => handleLinkClick(e, "/#contact")}>
             <Button
               variant="glass"
@@ -153,6 +171,26 @@ export const Navbar = () => {
               Light Up the Talk
             </Button>
           </Link>
+          <div className="flex justify-center gap-4 mt-3 pt-4 border-t border-border-subtle/50">
+            <a
+              href="https://wa.me/201012316954"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300"
+              title="Chat on WhatsApp"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.73.001-2.597-1.002-5.037-2.824-6.86C16.69 2.19 14.254 1.187 11.66 1.187 6.223 1.187 1.8 5.558 1.797 10.92c-.001 1.638.455 3.242 1.32 4.673l-.99 3.612 3.93-.999zM17.07 14.73c-.273-.137-1.62-.8-1.87-.892-.252-.093-.437-.138-.62.138-.182.274-.707.892-.867 1.077-.16.183-.32.206-.593.069-.272-.138-1.15-.424-2.19-1.354-.809-.722-1.354-1.616-1.513-1.89-.16-.273-.016-.421.12-.558.123-.122.273-.32.41-.48.136-.16.182-.273.272-.455.09-.183.046-.343-.023-.48-.068-.138-.62-1.496-.85-2.043-.223-.538-.49-.464-.67-.464-.176 0-.377-.009-.578-.009s-.527.076-.803.376c-.276.3-.1.152-1.15 1.153-.276.3-.59.74-.79 1.12-.2.378-.024.71.113.935.138.225.263.398.414.56l5.72 5.093s.32.206.59.07c.27-.138 1.62-.8 1.87-.89z"/>
+              </svg>
+            </a>
+            <a
+              href="mailto:kamal.s.sroor@gmail.com"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:text-accent-glow hover:border-accent/40 transition-all duration-300"
+              title="Send Email"
+            >
+              <Mail size={18} />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
