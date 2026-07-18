@@ -40,3 +40,4 @@ jobs:
           server-dir: /public_html/
           local-dir: ./out/
           port: 21 # أو 22 إذا قمت بتفعيل SFTP الآمن في هوستينجر
+          dangerous-clean-slate: true
